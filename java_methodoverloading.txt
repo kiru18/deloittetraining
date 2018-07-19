@@ -1,0 +1,178 @@
+Exercise Objective(s): Overloading
+
+Exercise: Create a class called Calculator which has 4 different methods add, diff, mul and div that accept two numbers as parameters.
+ Overload the methods such that the parameters can be of the following pattern. 
+a)	Both are of int data type. 
+b)	Both are of double data type. 
+c)	First parameter is of int data type and second parameter is of double data type. 
+d)	First parameter is of double data type and second parameter is of int data type
+
+
+     Create an object to access these methods and invoke these methods with different type of numbers 
+and display the result in the corresponding methods. 
+
+
+package example;
+
+import java.util.Scanner;
+
+public class Calculator {
+	
+	public static void main(String[] args) {
+		
+		Scanner S= new Scanner(System.in)
+		
+	//	Calculator C=new Calculator();
+		System.out.println("Enter n1");
+		S.nextLine();
+
+		Calculator C=new Calculator();
+	    C.add(5, 2);
+	    C.add(15.5, 15.5);
+                     C.add(15.5,5);
+                     C.add(5, 15.5);
+	
+	C.diff(5, 2);
+	C.diff(15.5, 5);
+	C.diff(20, 15.5);
+	C.diff(15.5, 5);
+	
+	
+	C.mul(5, 2);
+	C.mul(15.5, 5);
+	C.mul(20, 15.5);
+	C.mul(15.5, 5);
+	
+	
+	C.div(5, 2);
+	C.div(15.5, 5);
+	C.div(20, 15.5);
+	C.div(15.5, 5);
+	}
+
+		public void add(int a,int b) {
+		int s=0;
+		s=a+b;
+		System.out.println(s);
+	}
+	public void add(double a, double b) {
+		double s=0;
+		s=a+b;
+		System.out.println(s);
+		
+	}
+	public void add(int a,double b) 
+	{
+		double s=0;
+		s=a+b;
+		System.out.println(s);
+	}
+	public void add(double a,int b) {
+		
+		double s=0;
+		s=a+b;
+		System.out.println(s);
+	}
+	
+	
+	public void diff(int a,int b) {
+		int s=0;
+		s=a-b;
+		System.out.println(s);
+	}
+	public void diff(double a, double b) {
+		double s=0;
+		s=a-b;
+		System.out.println(s);
+	}
+	public void diff(int a,double b) {
+		
+		double s=0;
+		s=a-b;
+		System.out.println(s);
+	}
+	public void diff(double a,int b) {
+		
+		double s=0;
+		s=a-b;
+		System.out.println(s);
+	}
+	
+	
+	
+	public void mul(int a,int b) {
+		
+		int s=0;
+		s=a*b;
+		System.out.println(s);
+	}
+	public void mul(double a, double b) {
+		double s=0;
+			s=a*b;
+			System.out.println(s);
+		
+	}
+	public void mul(int a,double b) {
+		
+		   double s=0;
+			s=a*b;
+			System.out.println(s);
+		
+	}
+	public void mul(double a,int b) {
+		double s=0;
+		s=a*b;
+		System.out.println(s);
+
+	}
+
+
+
+	public void div(int a,int b)
+	{double s=0;
+	s=a/b;
+	System.out.println(s);
+}
+	public void div(double a, double b) {
+		double s=0;
+		s=a/b;
+		System.out.println(s);
+
+	}
+	public void div(int a,double b) {
+		double s=0;
+		s=a*b;
+		System.out.println(s);
+
+	}
+	public void div(double a,int b) {
+		double s=0;
+		s=a*b;
+		System.out.println(s);
+
+	}
+
+	
+	
+	
+}
+
+Output:
+
+7
+31.0
+20.5
+20.5
+3
+10.5
+4.5
+10.5
+10
+77.5
+310.0
+77.5
+2.0
+77.5
+310.0
+77.5
+

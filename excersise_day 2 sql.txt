@@ -1,0 +1,126 @@
+create table Suppliers
+(
+   supplier_id varchar(20),
+   supplier_name varchar(20)
+)
+/
+
+create table Orders
+(
+  order_id varchar(20),
+   supplier_id varchar(20),
+   order_date date
+)
+/
+
+insert into Suppliers values('10000','IBM');
+insert into Suppliers values('10001','Hewlett Packard');
+insert into Suppliers values('10002','Microsoft');
+insert into Suppliers values('10003','TCS');
+
+insert into Orders values('1','10000',to_date('3/3/09','mm/dd/yy'));
+insert into Orders values('2','10000',to_date('7/5/10','mm/dd/yy'));
+insert into Orders values('3','10001',to_date('12/8/10','mm/dd/yy'));
+
+
+
+
+SQL> insert into Suppliers values('10000','IBM');
+
+1 row created.
+
+SQL> insert into Suppliers values('10001','Hewlett Packard');
+
+1 row created.
+
+SQL> insert into Suppliers values('10002','Microsoft');
+
+1 row created.
+
+SQL> insert into Suppliers values('10003','TCS');
+
+1 row created.
+
+SQL>
+SQL> insert into Orders values('1','10000',to_date('3/3/09','mm/dd/yy'));
+
+1 row created.
+
+SQL> insert into Orders values('2','10000',to_date('7/5/10','mm/dd/yy'));
+
+1 row created.
+
+SQL> insert into Orders values('3','10001',to_date('12/8/10','mm/dd/yy'));
+
+1 row created.
+
+SQL> select * from Suppliers
+  2  ;
+
+SUPPLIER_ID          SUPPLIER_NAME
+-------------------- --------------------
+10000                IBM
+10001                Hewlett Packard
+10002                Microsoft
+10003                TCS
+
+SQL> select order_id, supplier_name from Orders,Suppliers where Suppliers.supplier_id=Orders.supplier_id;
+
+ORDER_ID             SUPPLIER_NAME
+-------------------- --------------------
+2                    IBM
+1                    IBM
+3                    Hewlett Packard
+
+SQL> insert into Orders values('4','10010',to_date('3/3/09','mm/dd/yy'));
+
+1 row created.
+
+SQL> select order_id, supplier_name from Orders left join Suppliers on Suppliers.supplier_id=Orders.supplier_id;
+
+ORDER_ID             SUPPLIER_NAME
+-------------------- --------------------
+2                    IBM
+1                    IBM
+3                    Hewlett Packard
+4
+
+SQL> select order_id, supplier_name from Orders right outer  join Suppliers on Suppliers.supplier_id=Orders.supplier_id;
+
+ORDER_ID             SUPPLIER_NAME
+-------------------- --------------------
+1                    IBM
+2                    IBM
+3                    Hewlett Packard
+                     Microsoft
+                     TCS
+
+
+
+
+ select order_id,supplier_name from orders,suppliers;
+
+ORDER_ID             SUPPLIER_NAME
+-------------------- --------------------
+1                    IBM
+2                    IBM
+3                    IBM
+4                    IBM
+1                    Hewlett Packard
+2                    Hewlett Packard
+3                    Hewlett Packard
+4                    Hewlett Packard
+1                    Microsoft
+2                    Microsoft
+3                    Microsoft
+
+ORDER_ID             SUPPLIER_NAME
+-------------------- --------------------
+4                    Microsoft
+1                    TCS
+2                    TCS
+3                    TCS
+4                    TCS
+
+16 rows selected.
+

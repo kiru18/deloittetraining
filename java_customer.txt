@@ -1,0 +1,96 @@
+package example;
+
+public class CustomerDetails {
+int customerId;
+String customerName;
+int billAmount;
+ 	
+
+	/*public static void main(String[] args) {
+		Customer customer=new Customer();
+		customer.display();
+		customer.getCustomerName();	
+	    customer.display();}
+*/	
+	
+	public CustomerDetails() {
+		customerId=10;
+		customerName="anu";
+		billAmount=1000;}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setBillAmount(int billAmount) {
+		this.billAmount = billAmount;
+	}
+
+	public CustomerDetails (int customerId, int billAmount) {
+		
+		this.billAmount= billAmount;
+		this.customerId=customerId;
+	}
+	
+	public CustomerDetails(String customerName, int billAmount) {
+		super();
+		this.customerName = customerName;
+		this.billAmount = billAmount;
+	}
+
+	public void display()
+	{
+		System.out.println("Customer id="+customerId);
+		System.out.println("Customer name="+customerName);
+		System.out.println("Customer bill="+billAmount);
+	}
+
+
+
+
+
+
+}
+
+
+
+
+
+package example;
+
+public class client {
+	public static void main(String[] args) {
+		CustomerDetails customer= new CustomerDetails();
+		customer.display();
+			customer.setCustomerName("arun");
+	    customer.display();
+	  int result = input(); //object not required as it is static
+	 System.out.println(result);
+
+	}
+
+	public static int input() {
+		int a=0,b=0;
+		  int result = a+b;
+		return result;
+	}
+}
+
+
+
+output:
+Customer id=10
+Customer name=anu
+Customer bill=1000
+Customer id=10
+Customer name=arun
+Customer bill=1000
+0

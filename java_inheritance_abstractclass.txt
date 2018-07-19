@@ -1,0 +1,35 @@
+package inheritance;
+
+public class Main2 {
+	public static void main(String[] args) {
+		Vehicle v = new Car();
+		v.music();
+		v.start();
+	}
+}
+abstract class Vehicle {
+	 int price;
+	 public Vehicle()
+	 {System.out.println("vehicle con called");}
+	 public abstract void start(); //abstract method does not have any implementations
+	 public abstract void stop();
+	 public void music() {
+		 System.out.println("music");
+	 }
+
+}
+class Car extends Vehicle
+{
+	 public void start()
+	 {price =9000000;
+	 System.out.println("car started");}
+public void stop()
+{  System.out.println("car stoped");} 
+
+}
+
+op
+
+vehicle con called
+music
+car started

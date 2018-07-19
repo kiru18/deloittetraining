@@ -1,0 +1,51 @@
+package inheritance;
+
+public class main {
+	public static void main(String[] args) {
+		Men m= new Men();
+		m.eat();
+		Animal a= new Men();
+		a.eat();
+		m.drink();
+		
+	    a= new Dog(); //animal a= new dog- not right as a is already declared
+		a.eat();
+      //a.drink(); // not possible as drink is not present in super class animal
+	}
+
+}
+class Animal {
+public void eat()
+{System.out.println("animal eats food");}
+}
+
+class Men extends Animal
+{
+	public void drink()
+	 {System.out.println("men drink water");
+	  }
+	  
+	
+	public void eat()
+	 {System.out.println("men eats veg and nonveg");
+	 super.eat(); }
+	 
+}
+
+class Dog extends Animal
+{
+	 public void eat()
+	 {System.out.println("dog eats pedigree");
+	 }
+	  
+}
+
+output
+
+men eats veg and nonveg
+animal eats food
+men eats veg and nonveg
+animal eats food
+men drink water
+dog eats pedigree
+

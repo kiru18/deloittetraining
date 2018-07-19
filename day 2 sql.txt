@@ -1,0 +1,36 @@
+DAY2
+
+create table ab_emp
+(emp_no numeric(3) primary key,
+empname varchar(20) not null,
+salary number (8,2),
+ designation varchar2(20),
+dept_no numeric(3)
+);
+
+
+create table ab2_dept
+( dept_no numeric(3) primary key,
+dept_name varchar2(20),
+location varchar2(20) not null
+);
+
+alter table ab_emp add constraint myfk_1 foriegn key(depy_no) references ab2_dept(dept_no);
+
+insert into ab_emp values(1,'anu','98000','consultant',009);
+
+1 row created.
+SQL> select * from ab_emp;
+
+    EMP_NO EMPNAME                  SALARY DESIGNATION             DEPT_NO
+---------- -------------------- ---------- -------------------- ----------
+         1 anu                       98000 consultant                    9
+ 
+
+insert into ab2_dept values (009,'hr','bangalore');
+
+1 row created.
+
+alter table ab_emp add constraint myfk_1 foreign key(dept_no) references ab2_dept(dept_no);
+
+Table altered.
