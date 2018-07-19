@@ -1,0 +1,17 @@
+import java.lang.*;
+public class ex {
+	public int addNumbers(int n,int m)
+	{System.out.println(n+m);
+		return n+m;
+				
+	}
+
+public static void main(String[] args) {
+	ex e =new ex();
+	int s=0;
+	s+=e.addNumbers(2,9);
+	s+=e.addNumbers(2,9);
+	s+=e.addNumbers(2,9);
+	}
+
+}

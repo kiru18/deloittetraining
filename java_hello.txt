@@ -1,0 +1,37 @@
+public class Hello {
+
+	public void display()
+	{System.out.println("display called");
+	}
+	 
+	public void accept()
+	{System.out.println("accept");
+	Hello hello = new Hello();
+	hello.display();
+	
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("hellow and welcome to ide");
+	Hello h= new Hello();
+	h.display();
+	h.accept();
+	Emp e= new Emp();
+	e.getDetails() ;
+	System.out.println("main ended");
+	}
+
+}
+ class How
+ {
+	 public void hi()
+	 {System.out.println("hi belongs to how class");
+	 }
+ public static void main(String[] args) {
+	System.out.println("Hi iam how main");
+}
+ 
+}

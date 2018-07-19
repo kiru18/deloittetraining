@@ -1,0 +1,81 @@
+package inheritance;
+
+public class Passenger {
+ public Passenger(int pnr, String name, int fare) {
+		super();
+		this.pnr = pnr;
+		Name = name;
+		this.fare = fare;
+	}
+@Override
+public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((Name == null) ? 0 : Name.hashCode());
+	result = prime * result + fare;
+	result = prime * result + pnr;
+	return result;
+}
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Passenger other = (Passenger) obj;
+	if (Name == null) {
+		if (other.Name != null)
+			return false;
+	} else if (!Name.equals(other.Name))
+		return false;
+	if (fare != other.fare)
+		return false;
+	if (pnr != other.pnr)
+		return false;
+	return true;
+}
+int pnr;
+ String Name;
+ int fare;
+}
+ 
+
+package inheritance;
+
+public class PassengerDetails {
+public static void main(String[] args) {
+	Passenger p1=new Passenger(1927,"anu",25);
+	Passenger p2=new Passenger(1927,"anu",25);
+	Passenger p3=p1;
+	System.out.println(p1.equals(p2));
+	System.out.println("P1==P2");
+	System.out.println(p1==p2);
+	System.out.println("P1==P3");
+	System.out.println(p1==p3);
+	System.out.println("after overriding .equals");
+	System.out.println("p1.equals(p2)");
+	System.out.println(p1.equals(p2));
+	System.out.println("p1.equals(p3)");
+	System.out.println(p1.equals(p3));
+
+
+}
+}
+
+
+op
+true
+P1==P2
+false
+P1==P3
+true
+after overriding .equals
+p1.equals(p2)
+true
+p1.equals(p3)
+true
+
+
+

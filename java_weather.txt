@@ -1,0 +1,67 @@
+Mandated Programming Practices for the course: 
+1.	It is important that code must use meaningful names, conventions, appropriate constructs and indentation.
+2.	Every function must be preceded by short and meaningful comments explaining the purpose of the function.
+3.	It is important and implicit that all the data entered for the program should be valid. 
+
+1.	The temperatures of the cities across various countries are continuously monitored.
+ A warning is displayed in cases where temperature goes beyond intolerable range.  
+The temperature will be entered either in the form of Celsius or Fahrenheit. The conversion formula is C=5(F-32)/19. 
+If the temperature is beyond 60 degree Celsius or below -10 degree Celsius, warning has to be displayed.
+
+package something;
+
+import java.util.Scanner;
+
+public class WeatherSystem {
+	
+	public static void main(String[] args) {
+		Scanner n= new Scanner(System.in);
+		Scanner unit= new Scanner(System.in);
+		char ch;
+		 WeatherSystem W = new WeatherSystem();
+			float t;   
+		 System.out.println("enter temperature");
+	     t = n.nextFloat();
+		System.out.println("Enter the unit of temperature");
+	    ch= unit.next().charAt(0);
+	      if (ch=='f'||ch=='F')
+	      {   t=W.calculate(t);
+	     
+		//System.out.println(t);
+		 W.check(t);}
+	   else if (ch=='c'||ch=='C') 
+	     {
+	     W.check(t);}
+	     else System.out.println("Wrong unit");
+	     
+	   
+	n.close();
+	     unit.close();
+	}
+	
+	
+	public float calculate(float t)
+	{
+	float c;
+	c=((5*(t-32))/9);
+	System.out.println(c);
+	return c;
+	 
+	}
+	public void check(float x)
+	{ if(x>60||x<-10) 
+		System.out.println("Intolerable temperature");
+		else 
+			System.out.println("Tolerable temperature");	
+	}
+		
+}
+enter temperature
+150
+Enter the unit of temperature
+f
+65.55556
+Intolerable temperature
+
+
+
