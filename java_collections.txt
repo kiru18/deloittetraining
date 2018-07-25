@@ -1,0 +1,75 @@
+package collectiondemo;
+
+import java.util.Set;import java.util.TreeSet;
+
+public class demo1 {
+	
+	public static void main(String[] args) 
+	{
+		Set s =new TreeSet() ;	
+	 s.add("neha");
+	 s.add("zeba");
+	 s.add("arun");
+	 s.add("arjun");
+s.add("neha");
+ System.out.println(s);
+	
+	}}
+
+op
+
+[arjun, arun, neha, zeba] //sorted
+
+Set <String> s =new LinkedHashSet<String>() ;	
+	 s.add("neha");
+	 s.add("zeba");
+	 s.add("arun");
+	 s.add("arjun");
+s.add("neha");
+
+Iterator i =s.iterator();
+ while(i.hasNext())
+
+ {System.out.println(i.next());
+//	 System.out.println(s);
+ }
+
+
+op
+
+neha
+zeba
+arun
+arjun
+
+List <Integer> s= new LinkedList<Integer>();
+		s.add(1);
+		s.add(2);
+		s.add(3);
+		s.add(4);
+		s.add(5);
+		 System.out.println(s);
+		
+		 
+		 s.add(2,10);
+		 System.out.println(s);
+		 s.remove(1);
+		 
+		 System.out.println(s);
+		 Iterator i= s.iterator();
+			while(i.hasNext())
+			{
+				System.out.println(i.next());
+				
+			}
+
+op
+
+[1, 2, 3, 4, 5]
+[1, 2, 10, 3, 4, 5]
+[1, 10, 3, 4, 5]
+1
+10
+3
+4
+5

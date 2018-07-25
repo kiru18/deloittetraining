@@ -1,0 +1,67 @@
+package collections;
+//generic
+
+public class demo <Z> {
+public void display(Z name) {
+	
+System.out.println(name);
+}
+public static void main(String[] args) {
+	demo <Integer> d= new demo <Integer> ();
+	d.display(125);
+	demo<String> d1 = new demo<String>();
+	d1.display("abc");
+	
+}
+}
+
+
+op
+
+125
+abc
+
+package collections;
+
+import java.util.*;
+import java.util.TreeMap;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+public abstract class demo5 {
+	
+	public static void main(String[] args) {
+		TreeMap tm= new TreeMap();
+		tm.put("john",new Double(334.32));
+		tm.put("tom",new Double(4334.32));
+		tm.put("jane",new Double(1334.32));
+		tm.put("todd",new Double(3234.32));
+		
+		Set set =tm.entrySet();
+	java.util.Iterator i = set.iterator();
+	while(i.hasNext())
+	{Map.Entry me= (Map.Entry)i.next();
+	System.out.println(me.getKey()+";");
+	System.out.println(me.getValue());
+	}
+		double balance =((Double)tm.get("john")).doubleValue();
+		tm.put("john", new Double(balance+100));
+		System.out.println("johns new balance:"+tm.get("john"));
+	}
+
+}
+
+
+
+op
+
+jane;
+1334.32
+john;
+334.32
+todd;
+3234.32
+tom;
+4334.32
+johns new balance:434.32
+

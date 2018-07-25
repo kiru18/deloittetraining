@@ -1,0 +1,65 @@
+package threaddemos;
+
+//import java.awt.print.Printable;
+
+//import collections.demo;
+
+class Print
+{
+	public synchronized static void printSomething(String firstName, String lastName) //synchronized
+	{
+				System.out.println("welcome :"+firstName);
+		try {
+			Thread.sleep(300);
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("bye :"+lastName);
+		
+		
+	}
+	
+}
+public class demo3 extends Thread {
+
+	private String firstName;
+	private String lastName;
+	
+		public demo3 (int i, String firstName ,String lastName)
+	{
+	//this will create a thread with the name 1
+		super(i+"");
+		this.firstName= firstName;
+		this.lastName= lastName;
+		start();}
+	
+		public void run() {
+			Print.printSomething(firstName,lastName);
+
+		}
+		public static void main(String[] args) 
+		{
+			//for (int i = 1;i<=2;i++)
+				new demo3(1,"rahul","mehta");
+				new demo3(3,"neha","agarwal");
+				new demo3(2,"nidi","agarwal");
+			/*	new demo3(2,"nidi","agarwal");
+				new demo3(2,"nidi","agarwal");
+				*/
+				
+		}}
+	
+	
+
+op
+
+welcome :rahul
+bye :mehta
+welcome :neha
+bye :agarwal
+welcome :nidi
+bye :agarwal
+
+

@@ -1,0 +1,44 @@
+//innerclass
+
+package innerclass;
+
+class A
+{String password ="hello123";
+	public
+	class ChangePassword{
+	int passwordChangedDays =10;
+	public void display()
+	{
+		System.out.println(passwordChangedDays);
+		System.out.println("original password:"+password);
+		password="abc123";
+	}
+}
+	public void changePwd()
+	{
+			ChangePassword p= new ChangePassword();
+			p.display();
+			System.out.println("changed password:"+password);
+	}
+	
+}
+
+public class B {
+	public static void main(String[] args) {
+		A a= new A(); //creating an obj of outer class
+		a.changePwd();
+		A.ChangePassword f= a.new ChangePassword();  //to allocate memory to child class
+	//	A.ChangePassword f= new A.ChangePassword();	//WHEN STATIC CLASS USED
+		f.display();
+	}
+
+}
+
+
+op
+
+10
+original password:hello123
+changed password:abc123
+10
+original password:abc123

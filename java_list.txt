@@ -1,0 +1,287 @@
+public class customer1 {
+ private int customerID;
+ private String customerName;
+ private  String customerAddress;
+ private int billAmount;
+public customer1(int customerID, String customerName, String customerAddress, int billAmount) {
+	super();
+	this.customerID = customerID;
+	this.customerName = customerName;
+	this.customerAddress = customerAddress;
+	this.billAmount = billAmount;
+}
+public int getCustomerID() {
+	return customerID;
+}
+public void setCustomerID(int customerID) {
+	this.customerID = customerID;
+}
+public String getCustomerName() {
+	return customerName;
+}
+public void setCustomerName(String customerName) {
+	this.customerName = customerName;
+}
+public String getCustomerAddress() {
+	return customerAddress;
+}
+public void setCustomerAddress(String customerAddress) {
+	this.customerAddress = customerAddress;
+}
+public int getBillAmount() {
+	return billAmount;
+}
+public void setBillAmount(int billAmount) {
+	this.billAmount = billAmount;
+}
+@Override
+public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + billAmount;
+	result = prime * result + ((customerAddress == null) ? 0 : customerAddress.hashCode());
+	result = prime * result + customerID;
+	result = prime * result + ((customerName == null) ? 0 : customerName.hashCode());
+	return result;
+}
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	customer1 other = (customer1) obj;
+	if (billAmount != other.billAmount)
+		return false;
+	if (customerAddress == null) {
+		if (other.customerAddress != null)
+			return false;
+	} else if (!customerAddress.equals(other.customerAddress))
+		return false;
+	if (customerID != other.customerID)
+		return false;
+	if (customerName == null) {
+		if (other.customerName != null)
+			return false;
+	} else if (!customerName.equals(other.customerName))
+		return false;
+	return true;
+}
+@Override
+public String toString() {
+	return "customer1 [customerID=" + customerID + ", customerName=" + customerName + ", customerAddress="
+			+ customerAddress + ", billAmount=" + billAmount + "]";
+}
+ 
+
+
+
+}
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class customermain {
+
+	public static void main(String[] args) {
+		List <customer1> allCustomers = new ArrayList <customer1>();
+		customer1 c1= new customer1(10, "uma", "pune", 76000);
+ allCustomers.add(c1);
+ allCustomers.add(new customer1(11,"anu","agra",9800));
+ allCustomers.add(new customer1(12,"yamini","jaipur",9800));
+ allCustomers.add(new customer1(13,"om","delhi",5000));
+	System.out.println("printing all details");
+	for (customer1 customer:allCustomers)
+		System.out.println(customer);
+
+	}
+}
+
+
+op
+
+printing all details
+customer1 [customerID=10, customerName=uma, customerAddress=pune, billAmount=76000]
+customer1 [customerID=11, customerName=anu, customerAddress=agra, billAmount=9800]
+customer1 [customerID=12, customerName=yamini, customerAddress=jaipur, billAmount=9800]
+customer1 [customerID=13, customerName=om, customerAddress=delhi, billAmount=5000]
+
+
+
+
+public class customer1 implements Comparable<customer1> {
+ private int customerID;
+ private String customerName;
+ private  String customerAddress;
+ private int billAmount;
+public customer1(int customerID, String customerName, String customerAddress, int billAmount) {
+	super();
+	this.customerID = customerID;
+	this.customerName = customerName;
+	this.customerAddress = customerAddress;
+	this.billAmount = billAmount;
+}
+public int getCustomerID() {
+	return customerID;
+}
+public void setCustomerID(int customerID) {
+	this.customerID = customerID;
+}
+public String getCustomerName() {
+	return customerName;
+}
+public void setCustomerName(String customerName) {
+	this.customerName = customerName;
+}
+public String getCustomerAddress() {
+	return customerAddress;
+}
+public void setCustomerAddress(String customerAddress) {
+	this.customerAddress = customerAddress;
+}
+public int getBillAmount() {
+	return billAmount;
+}
+public void setBillAmount(int billAmount) {
+	this.billAmount = billAmount;
+}
+@Override
+public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + billAmount;
+	result = prime * result + ((customerAddress == null) ? 0 : customerAddress.hashCode());
+	result = prime * result + customerID;
+	result = prime * result + ((customerName == null) ? 0 : customerName.hashCode());
+	return result;
+}
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	customer1 other = (customer1) obj;
+	if (billAmount != other.billAmount)
+		return false;
+	if (customerAddress == null) {
+		if (other.customerAddress != null)
+			return false;
+	} else if (!customerAddress.equals(other.customerAddress))
+		return false;
+	if (customerID != other.customerID)
+		return false;
+	if (customerName == null) {
+		if (other.customerName != null)
+			return false;
+	} else if (!customerName.equals(other.customerName))
+		return false;
+	return true;
+}
+@Override
+public String toString() {
+	return "customer1 [customerID=" + customerID + ", customerName=" + customerName + ", customerAddress="
+			+ customerAddress + ", billAmount=" + billAmount + "]";
+}
+@Override
+public int compareTo(customer1 o) {
+	// TODO Auto-generated method stub
+	
+	
+	/*if(this.billAmount>o.billAmount)
+	{return 1;}
+	else return -1;*/
+	
+	if (this.getCustomerName().compareTo(o.getCustomerName())>0)
+		return -1;
+	else return 1;
+}
+ 
+
+
+
+}
+
+
+
+
+// to sort according to user defined conditions
+
+import java.util.Comparator;
+
+public class CustomerAddressComparator implements Comparator<customer1> {
+
+	@Override
+	public int compare(customer1 o1, customer1 o2) 
+	{
+		// TODO Auto-generated method stub
+		
+		
+		if (o1.getCustomerAddress().compareTo(o2.getCustomerAddress())>0)
+			return -1;
+		else return 1;
+	
+	}
+
+}
+
+
+import java.util.List;
+import java.util.*;
+
+
+public class customermain {
+
+	public static void main(String[] args) {
+		List <customer1> allCustomers = new ArrayList <customer1>();
+		customer1 c1= new customer1(10, "uma", "pune", 76000);
+ allCustomers.add(c1);
+ allCustomers.add(new customer1(11,"anu","agra",9800));
+ allCustomers.add(new customer1(12,"yamini","jaipur",5400));
+ allCustomers.add(new customer1(13,"om","delhi",5000));
+	System.out.println("printing all details");
+	for (customer1 customer:allCustomers)
+		System.out.println(customer);
+
+	Collections.sort(allCustomers);   //only 1 sorting technique with comparable-one parameter
+	
+	System.out.println("after sorting printing all details"); //user choice of sorting technique with comparator-two parameter
+	for (customer1 customer:allCustomers)
+		System.out.println(customer);
+	
+	Collections.sort(allCustomers, new CustomerAddressComparator()); 
+	System.out.println("after sorting printing all details");
+	for (customer1 customer:allCustomers)
+		System.out.println(customer);
+
+	}
+	
+	
+}
+
+
+printing all details
+customer1 [customerID=10, customerName=uma, customerAddress=pune, billAmount=76000]
+customer1 [customerID=11, customerName=anu, customerAddress=agra, billAmount=9800]
+customer1 [customerID=12, customerName=yamini, customerAddress=jaipur, billAmount=5400]
+customer1 [customerID=13, customerName=om, customerAddress=delhi, billAmount=5000]
+after sorting printing all details  // based on name
+customer1 [customerID=12, customerName=yamini, customerAddress=jaipur, billAmount=5400]
+customer1 [customerID=10, customerName=uma, customerAddress=pune, billAmount=76000]
+customer1 [customerID=13, customerName=om, customerAddress=delhi, billAmount=5000]
+customer1 [customerID=11, customerName=anu, customerAddress=agra, billAmount=9800]
+after sorting printing all details //based on address
+customer1 [customerID=10, customerName=uma, customerAddress=pune, billAmount=76000]
+customer1 [customerID=12, customerName=yamini, customerAddress=jaipur, billAmount=5400]
+customer1 [customerID=13, customerName=om, customerAddress=delhi, billAmount=5000]
+customer1 [customerID=11, customerName=anu, customerAddress=agra, billAmount=9800]
+
+
+
+
+

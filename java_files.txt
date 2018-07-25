@@ -1,0 +1,125 @@
+creating a file
+
+package files;
+ import java.io.File;
+import java.io.IOException;
+ 
+ 
+public class filemain {
+
+	
+	
+	public static void main(String[] args) throws IOException 
+	{
+		
+	File f= new File("c:\\Batch\\Batchmates.txt");
+	File f2= new File("c:\\Batch");
+	
+	if(f.exists())
+	{
+		
+	}	
+	else 
+	{boolean b= f2.mkdir();
+	if(b)
+		{
+				System.out.println("directory created");
+				f.createNewFile();
+				System.out.println("file created");
+		}
+	
+		}
+
+	  
+	}	
+	
+}
+
+COPYING CONTENT TO ANOTHER
+
+
+package files;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
+public class copy {
+
+	
+
+	public static void main(String[] args) throws IOException {
+		File afile= new File("c:\\Batch\\A.txt");
+		File a2file= new File("c:\\Batch");
+		FileWriter writer = new FileWriter(afile);
+		writer.write ("you are working here");
+		writer.close();
+		
+		
+		
+	
+	
+	if(afile.exists())
+	{
+		File bfile= new File("c:\\Batch\\B.txt");
+		File b2file= new File("c:\\Batch");
+		FileWriter writers = new FileWriter(bfile);
+		FileReader reader=new FileReader("c:\\Batch\\A.txt");
+		int i;
+		while ((i=reader.read())!=-1)
+		{
+			System.out.println((char)i);
+		
+			writers.write ((char)i);
+
+
+		}
+		writers.close();
+
+		reader.close();
+	
+		
+			
+	}
+	else System.out.println("file does not exist");
+}	
+}
+
+
+GETTING VALUES FROM USER AND WRITING INTO A FILE\
+
+
+package files;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class demo2 {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		File f= new File("c:\\Batch\\Details.txt");
+		//File f2= new File("c:\\Batch");
+
+		BufferedReader name = new BufferedReader(new InputStreamReader(System.in));
+	System.out.println("enter your name");
+	String Name;
+	Name = name.readLine();
+
+	BufferedReader quantity = new BufferedReader(new InputStreamReader(System.in)); // getting quantity
+	System.out.println("enter quantity");
+	int Quant = Integer.parseInt(quantity.readLine());
+	BufferedWriter writers = new BufferedWriter(new FileWriter(f)); // writing details into the file
+	writers.write("Name:"+Name);
+	writers.write("quantity:"+Quant);
+	writers.close();
+	
+	
+	
+	
+	}
+}
